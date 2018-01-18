@@ -1,4 +1,5 @@
 import turtle
+import time
 
 def array(length, nx, ny):
     wy = length/ny
@@ -38,6 +39,6 @@ def array(length, nx, ny):
     t.forward(wy)
     t.penup()
     t.forward(500)
-        
 
 array(350, 4, 4)
+time.sleep(600)
