@@ -109,6 +109,12 @@ while True:
                 start_time = time.time()
                 print("Started FPS test")
 
+        elif key == 115:  # S key
+            print("Saving frame to image.")
+            date_and_time = datetime.datetime.now().strftime("shot_%d_%m_%Y__%H_%M_%S")
+            fname = os.getcwd() + '/' + date_and_time + '.jpg'
+            cv2.imwrite(fname, image)
+
         else:
             print("Key not reckognised: {}".format(key))
 
