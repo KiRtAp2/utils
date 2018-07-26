@@ -5,6 +5,7 @@ from urllib.parse import urlparse
 from sys import argv, stderr
 import requests
 import re
+import time
 
 
 # Parts of the original URL
@@ -15,6 +16,7 @@ scheme_netloc_sep = None
 # The search query
 query = None
 
+curr_site = None
 seen_sites = set()
 
 
@@ -76,6 +78,7 @@ def scan_site(url):
     if url in seen_sites:
         return
 
+    curr_site = url
     seen_sites.add(url)
 
     pars = Parser()
